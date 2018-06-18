@@ -19,7 +19,7 @@ export class Signin extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        console.log(this.state);
+        // console.log(this.state);
         fetch(`${API_URL}signin`, {
             method: 'post',
             headers: {

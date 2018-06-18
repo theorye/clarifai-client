@@ -85,7 +85,7 @@ class App extends Component {
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log(width, height);
+    // console.log(width, height);
 
     return {
       leftCol: clarifaiFace.left_col * width,
@@ -97,7 +97,7 @@ class App extends Component {
   }
 
   displayFaceBox = (box) => {
-    console.log(box);
+    // console.log(box);
     this.setState({box});
   }
 
@@ -129,8 +129,8 @@ class App extends Component {
       return res.json()
     })
     .then( (response) => {
-        console.log(response);
-        console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
+        // console.log(response);
+        // console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
         if(response) {
           fetch(`${API_URL}image`, {           
             method: 'put',
