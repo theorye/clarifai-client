@@ -1,0 +1,22 @@
+version: '3'
+# docker-compose up -d -- Starts in deattached NOTE MUST BE IN DIRECTORY OF docker-compose.yaml
+# docker-compose ps -- Shows processes
+# docker-compose down -- NOTE MUST BE IN DIRECTORY OF docker-compose.yaml
+volumes:
+  volume:
+  test:
+services:
+  pgdb:
+    image: postgres
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    ports:
+      - "5432:5432"
+    volumes:
+      - test
+  admin:
+    image: adminer
+    ports:
+      - 8080:8080
